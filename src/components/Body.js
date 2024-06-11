@@ -2,6 +2,7 @@ import RestaurentCard from "./RestaurentCard";
 import resList from "../../data";
 import { useEffect, useState } from "react";
 import { fetchData, filterRes } from "../controllers";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
     const [listOfRestaurent, setListOfRestaurent] = useState([]);
@@ -21,15 +22,20 @@ const Body = () => {
         setListOfRestaurent(resInfo);
     }
 
-    return (
+    // //Conditional Rendering
+    // if(listOfRestaurent.length==0){
+    //     return <Shimmer/>
+    // }
+
+    return listOfRestaurent===0 ? <Shimmer/> : (
         <div className="body">
             <div className="filter">
                 <button className="filter-btn" onClick={() => {
-                    // let rest = listOfRestaurent.filter((res) => {
-                    //     return res.data.avgRating >= 4.4;
-                    // });
-                    // setListOfRestaurent(rest);
-                    // console.log(rest);
+                    let rest = listOfRestaurent.filter((res) => {
+                        return res?.info?.avgRating >= 4.5;
+                    });
+                    setListOfRestaurent(rest);
+                    console.log(rest);
                 }}>Top Rated Restaurent</button>
             </div>
             <div className="res-container">
