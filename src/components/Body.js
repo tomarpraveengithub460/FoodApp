@@ -23,14 +23,29 @@
 
 import RestaurentCard from "./RestaurentCard";
 import resList from "../../data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Body = () => {
-    const [filteredList,setFilteredList]=useState(resList); //Initialization Line
+    const [listOfRestaurent,setListOfRestaurent]=useState(resList); //Initialization Line
+
+    useEffect(()=>{
+        fetchData();
+    },[]);
+
+    const fetchData=async () =>{
+        const data = await fetch(
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        );
+        const json= await data.json();
+        console.log(json);
+        // setListOfRestaurent(json?.data?.cards[2]?.data?.data?.cards);
+    }
+
+
     function filterRes(){
-        let rest=filteredList.filter((res)=>{
+        let rest=listOfRestaurent.filter((res)=>{
             return res.data.avgRating>=4.4;
         });
-        setFilteredList(rest);
+        setListOfRestaurent(rest);
         console.log(rest);
     }
 return (
@@ -42,7 +57,7 @@ return (
         </div>
         <div className="res-container">
             {
-                filteredList.map(restaurent => <RestaurentCard key={restaurent.data.id} resData={restaurent} />)
+                listOfRestaurent.map(restaurent => <RestaurentCard key={restaurent.data.id} resData={restaurent} />)
             }
         </div>
     </div>
