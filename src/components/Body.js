@@ -24,8 +24,7 @@ const Body = () => {
         console.log(json);
         setListOfRestaurent(resInfo);
     }
-
-    return listOfRestaurent == 0 ? <Shimmer /> : (
+    return listOfRestaurent.length==0 ? <Shimmer/> : (
         <div className="body">
             <div className="filter">
                 <div className="search">
