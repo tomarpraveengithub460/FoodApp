@@ -6,7 +6,7 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
     const [listOfRestaurent, setListOfRestaurent] = useState([]);
-    
+
     //Whenever State variables update, react triggers a recoinciliation cycle(re-renders the component)
     const [searchText, setSearchText] = useState("");
 
@@ -16,7 +16,6 @@ const Body = () => {
         fetchData();
     }, []);
     
-
 
     const fetchData = async () => {
         const data = await fetch(
@@ -41,9 +40,9 @@ const Body = () => {
                 </div>
                 <button className="filter-btn" onClick={() => {
                     let rest = listOfRestaurent.filter((res) => {
-                        return res?.info?.avgRating >= 4.3;
+                        return res?.info?.avgRating >= 4.5;
                     });
-                    setListOfRestaurent(rest);
+                    setfilteredRestaurent(rest);
                     console.log(rest);
                 }}>Top Rated Restaurent</button>
             </div>
