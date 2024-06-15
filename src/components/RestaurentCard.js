@@ -1,5 +1,4 @@
 import { CDN_URL } from "../utils/constants";
-
 const RestaurentCard = (props) => {
     const { resData } = props;
     // console.log("Inside res card and ",resData.info);

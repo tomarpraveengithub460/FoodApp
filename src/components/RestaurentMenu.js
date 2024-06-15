@@ -14,29 +14,39 @@ const RestaurentMenu = () => {
     }, []);
 
     const fetchMenu = async () => {
-        const data = await fetch(MENU_API + 229);
+        const data = await fetch(MENU_API + resId);
+        // console.log(resId);
         const json = await data.json();
-        console.log(json);
-        setResInfo(json.data.items);
+
+        // console.log(json);
+
+        // console.log(json.data.cards[4]?.groupedCard?.
+        //     cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards
+        // );
+
+        // console.log(json.data.cards[4]?.groupedCard?.
+        //     cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.name
+        // );
+
+        setResInfo(json.data.cards[4]?.groupedCard?.
+            cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards);
 
     }
 
     if (resInfo == null) return (<Shimmer />);
 
-    const { name, cuisines, cloudinaryImageId, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
+    const { name, imageId, defaultPrice } = resInfo[0]?.card?.info;
+    // console.log(name, imageId, defaultPrice);
+    // console.log(resInfo);
 
-    const { itemsCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card.card;
-    console.log(itemscard);
 
     return (
         <div className="menu">
-            <h1>{name}</h1>
-            {console.log(name)}
-            <p>{cuisines.join(", ")} - {costForTwoMessage}</p>
             <h2>Menu</h2>
-            {itemsCards.map((item) => (
-                <ul>
-                    <li key={item.card.info.id}>
+            <h2>{name}</h2>
+            {resInfo.map((item) => (
+                <ul key={item?.card?.info?.id}>
+                    <li >
                         {item.card.info.name} - {" Rs. "}
                         {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
                     </li>
