@@ -28,8 +28,8 @@ class About extends Component {
     //it is called after the component is rendered
     // If there is a delay in making API Call then component rendeering 
     // does not stop due to the delay.
-    
-    componentDidMount(){
+
+    componentDidMount() {
         console.log("Parent ComponentDidMount");
     }
 
@@ -41,6 +41,7 @@ class About extends Component {
                 <h2>This is the food ordering App</h2>
                 <User name="Akshay Saini" price={200} />
                 <UserClass name="Akshay Saini" price={200} />
+                <UserClass name="Karan" price={100} />
             </div>
         )
     }
