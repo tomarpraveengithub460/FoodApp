@@ -1,24 +1,24 @@
-import { useState } from "react";
+import { useEffect} from "react";
 
-const User = (props) => {
-    const {name,price}=props;
+const User = () => {
+    useEffect(()=>{
+        const interval=setInterval(()=>{
+            console.log("Hello World");
+        },1000);
+        console.log("Use Effect");
 
-    const [count,setCount]=useState(0);
-
-    function inCount(){
-        setCount(()=>{
-            return count+1;
-        })
-    }
+        //This is how we clear the interval.
+        return ()=>{
+            clearInterval(interval);
+            console.log("Use Effect Return");
+        };
+    },[]);
 
     return (
         <div className="user-card">
-            <h2>Name : {name} - {price/2}</h2>
-            <h3>Location : Dehradhun</h3>
-            <h4>Contact : @akshaymarch7</h4>
-            <h5>Count is : {count}</h5>
-            <button onClick={inCount}>Increase</button>
+            <h1>Hello, How are You ?</h1>
         </div>
     );
 };
+
 export default User;
