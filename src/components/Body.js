@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [listOfRestaurent, setListOfRestaurent] = useState([]);
@@ -11,15 +12,15 @@ const Body = () => {
     //Whenever State variables update, react triggers a recoinciliation cycle(re-renders the component)
     const [searchText, setSearchText] = useState("");
 
-    const [filteredRestaurent,setfilteredRestaurent]=useState([]);
+    const [filteredRestaurent, setfilteredRestaurent] = useState([]);
 
-    const {resId}=useParams();
+    const { resId } = useParams();
     // console.log(resId);
 
     useEffect(() => {
         fetchData();
     }, []);
-    
+
 
     const fetchData = async () => {
         const data = await fetch(
@@ -33,16 +34,24 @@ const Body = () => {
         setListOfRestaurent(resInfo);
         setfilteredRestaurent(resInfo);
     }
-    return listOfRestaurent.length==0 ? <Shimmer/> : (
+
+    const onlineStatus = useOnlineStatus();
+    if (onlineStatus === false)
+        return (
+            <h1>Looks like you are offline!! Please chaeck your internet Connection.</h1>
+        );
+
+
+    return listOfRestaurent.length == 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter">
                 <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(event)=>{setSearchText(event.target.value);}} />
-                    <button onClick={()=>{
-                        const filteredRes=listOfRestaurent.filter((res)=>res?.info?.name.toLowerCase().includes(searchText.toLowerCase())); 
+                    <input type="text" className="search-box" value={searchText} onChange={(event) => { setSearchText(event.target.value); }} />
+                    <button onClick={() => {
+                        const filteredRes = listOfRestaurent.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
                         setfilteredRestaurent(filteredRes);
                         // console.log(filteredRes);
-                        }}>Search</button> 
+                    }}>Search</button>
                 </div>
                 <button className="filter-btn" onClick={() => {
                     let rest = listOfRestaurent.filter((res) => {
@@ -54,7 +63,7 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {
-                    filteredRestaurent.map((restaurent) => <Link to={"/restaurant/"+restaurent?.info?.id} key={restaurent?.info?.id}><RestaurentCard  resData={restaurent} /></Link>)
+                    filteredRestaurent.map((restaurent) => <Link to={"/restaurant/" + restaurent?.info?.id} key={restaurent?.info?.id}><RestaurentCard resData={restaurent} /></Link>)
                 }
             </div>
         </div>
