@@ -8,6 +8,17 @@ import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurentMenu from "./components/RestaurentMenu";
+// import Grocery from "./components/Grocery";
+
+// Chuning
+// Code splitting
+// Dynamic Bundling
+// Lazy loading
+// On demand Loading
+// dynamic import
+import { lazy, Suspense} from "react";
+const Grocery= lazy(()=> import("./components/Grocery"));
+
 
 const AppLayout = () => {
     return (
@@ -35,6 +46,11 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <Contact />
+            },
+            {
+                path: "/grocery",
+                element: <Suspense fallback={<h1>Loading......</h1>}><Grocery /></Suspense>, 
+                //fallback is used to show something when code is not available , You can shpw Shimmer UI here
             },
             {
                 path: "/restaurant/:resId",
