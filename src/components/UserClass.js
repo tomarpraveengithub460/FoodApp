@@ -1,39 +1,48 @@
 import React from "react"
-//React.Component is given to us by "react"
 class UserClass extends React.Component {
-    constructor(props){     
+    constructor(props) {
         super(props);
-        // console.log(props.name);
-        // console.log(props.price);
-        this.state={
-            count:0,
-            count1:0
-        }
-        console.log("Child Constructor");
+        this.state = {
+            userInfo :{
+                name : "Dummy",
+                location : "Default",
+                avatar_url : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmCS3uMVc54NYJHXFUSIUFZrI3Zp00EZ6KcA&s"
+
+            },
+        };
+        console.log(this.props.name+" Child Constructor");
     }
 
-    componentDidMount(){
-        console.log("Child Did Mount");
+    async componentDidMount() {
+        const data = await fetch("https://api.github.com/users/akshaymarch7");
+        const json = await data.json();
+
+        console.log(json);
+        
+
+        this.setState({
+            userInfo : json
+        })
+    }
+
+    componentDidUpdate(){
+        console.log("Component Did Update");
+    }
+
+    //componentWillUnmount will be called when page will be changed
+    componentWillUnmount(){
+        console.log("Component Will Unmount");
     }
 
     render() {
-        //You can destructure it.
-        const {name,price}=this.props;
-        console.log("Child Render");
+        console.log(this.props.name+" Child Render");
+        const {name,location,avatar_url}=this.state.userInfo;
+        // debugger;
         return (
             <div className="user-card">
-                <h2>Name : {this.props.name} - {this.props.price}</h2>
-                <h3>The name of mentor is : {name}</h3>
-                <h4>The price of teaching is : {price}</h4>
-                <h3>Location : Dehradhun</h3>
-                <h4>Contact : @akshaymarch7</h4>
-                <hr></hr>
-                <h1>Count is : {this.state.count}</h1>
-                <button onClick={()=>{
-                    this.setState({
-                        count:this.state.count+1
-                    })
-                }}>Increase Count</button>
+                <img src={avatar_url}></img>
+               <h2>{this.state.userInfo.name}</h2>
+               <h3>{this.state.userInfo.location}</h3>
             </div>
         )
     }

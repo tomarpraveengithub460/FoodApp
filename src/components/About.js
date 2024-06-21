@@ -16,12 +16,12 @@
 //Now we are converting the functional Component into the Class Component
 import User from "./User";
 import UserClass from "./UserClass";
-import { Component } from "react";   //This is also correct
+import { Component } from "react";   
 
 class About extends Component {
     constructor(props) {
         super(props);
-        console.log("Parent Constructor");
+        // console.log("Parent Constructor");
     }
 
     //ComponentDidMount is used  to make an API Call usually beacuse
@@ -30,18 +30,18 @@ class About extends Component {
     // does not stop due to the delay.
 
     componentDidMount() {
-        console.log("Parent ComponentDidMount");
+        // console.log("Parent ComponentDidMount");
     }
 
     render() {
-        console.log("Parent Render");
+        // console.log("Parent Render");
         return (
             <div>
                 <h1>About us</h1>
                 <h2>This is the food ordering App</h2>
-                <User name="Akshay Saini" price={200} />
+                {/* <User name="Akshay Saini" price={200} /> */}
                 <UserClass name="Akshay Saini" price={200} />
-                <UserClass name="Karan" price={100} />
+                {/* <UserClass name="Karan" price={100} /> */}
             </div>
         )
     }
