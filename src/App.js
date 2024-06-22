@@ -8,6 +8,8 @@ import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurentMenu from "./components/RestaurentMenu";
+
+
 // import Grocery from "./components/Grocery";
 
 // Chunking
