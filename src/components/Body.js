@@ -17,7 +17,7 @@ const Body = () => {
 
     const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
 
-    console.log(listOfRestaurent);
+    // console.log(listOfRestaurent);
 
     const { resId } = useParams();
     // console.log(resId);

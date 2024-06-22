@@ -5,6 +5,10 @@ import useRestaurentMenu from "../utils/useRestaurentMenu";
 const RestaurentMenu = () => {
     const { resId } = useParams();
     const resInfo=useRestaurentMenu(resId);
+    
+    console.log(resInfo);
+
+
     if (resInfo == null) return (<Shimmer />);
 
     const { name, imageId, defaultPrice } = resInfo[0]?.card?.info;

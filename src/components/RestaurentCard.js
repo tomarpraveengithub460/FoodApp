@@ -24,7 +24,6 @@ const RestaurentCard = (props) => {
     )
 }
 
-
 export const withPromotedLabel=(RestaurentCard)=>{
     return (props)=>{
         return (
