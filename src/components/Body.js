@@ -1,10 +1,11 @@
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { withPromotedLabel } from "./RestaurentCard";
 import resList from "../../data";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import RestaurentMenu from "./RestaurentMenu";
 
 const Body = () => {
     const [listOfRestaurent, setListOfRestaurent] = useState([]);
@@ -13,6 +14,10 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
 
     const [filteredRestaurent, setfilteredRestaurent] = useState([]);
+
+    const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
+
+    console.log(listOfRestaurent);
 
     const { resId } = useParams();
     // console.log(resId);
@@ -54,19 +59,20 @@ const Body = () => {
                     }}>Search</button>
                 </div>
                 <div className="search m-4 p-4 flex items-center">
-                <button className="px-4 py-2 bg-gray-100 rounded-lg" onClick={() => {
-                    let rest = listOfRestaurent.filter((res) => {
-                        return res?.info?.avgRating >= 4.5;
-                    });
-                    setfilteredRestaurent(rest);
-                    // console.log(rest);
-                }}>Top Rated Restaurent</button>
+                    <button className="px-4 py-2 bg-gray-100 rounded-lg" onClick={() => {
+                        let rest = listOfRestaurent.filter((res) => {
+                            return res?.info?.avgRating >= 4.5;
+                        });
+                        setfilteredRestaurent(rest);
+                        // console.log(rest);
+                    }}>Top Rated Restaurent</button>
                 </div>
-               
+
             </div>
             <div className="flex flex-wrap">
                 {
-                    filteredRestaurent.map((restaurent) => <Link to={"/restaurant/" + restaurent?.info?.id} key={restaurent?.info?.id}><RestaurentCard resData={restaurent} /></Link>)
+                    filteredRestaurent.map((restaurent) => <Link to={"/restaurant/" + restaurent?.info?.id} key={restaurent?.info?.id}>{(restaurent?.info?.avgRating
+>=4.5)?<RestaurentCardPromoted resData={restaurent} />:<RestaurentCard resData={restaurent} />}</Link>)
                 }
             </div>
         </div>
