@@ -1,6 +1,8 @@
 import { CDN_URL } from "../utils/constants";
 const RestaurentCard = (props) => {
+    console.log("This is the LOC : ",props);
     const { resData } = props;
+    console.log("This is the ResData : ",resData);
     // console.log("Inside res card and ",resData.info);
     const {
         name,
@@ -26,13 +28,13 @@ const RestaurentCard = (props) => {
 
 export const withPromotedLabel=(RestaurentCard)=>{
     return (props)=>{
+        const {resData}=props;
         return (
             <div>
                 <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
-                <RestaurentCard {...props} />
+                <RestaurentCard {...props}/>
             </div>
         )
     }
 }
-
 export default RestaurentCard;

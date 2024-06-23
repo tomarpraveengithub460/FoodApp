@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import RestaurentMenu from "./RestaurentMenu";
 
 const Body = () => {
     const [listOfRestaurent, setListOfRestaurent] = useState([]);
@@ -18,6 +17,7 @@ const Body = () => {
     const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
 
     // console.log(listOfRestaurent);
+    // console.log("Filtered ",filteredRestaurent);
 
     const { resId } = useParams();
     // console.log(resId);
@@ -55,6 +55,7 @@ const Body = () => {
                     <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
                         const filteredRes = listOfRestaurent.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
                         setfilteredRestaurent(filteredRes);
+                        console.log("Filtered : ",filteredRestaurent);
                         // console.log(filteredRes);
                     }}>Search</button>
                 </div>
