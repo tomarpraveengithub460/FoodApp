@@ -8,20 +8,10 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [listOfRestaurent, setListOfRestaurent] = useState([]);
-
-    //Whenever State variables update, react triggers a recoinciliation cycle(re-renders the component)
     const [searchText, setSearchText] = useState("");
-
     const [filteredRestaurent, setfilteredRestaurent] = useState([]);
-
     const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
-
-    // console.log(listOfRestaurent);
-    // console.log("Filtered ",filteredRestaurent);
-
     const { resId } = useParams();
-    // console.log(resId);
-
     useEffect(() => {
         fetchData();
     }, []);
@@ -33,9 +23,6 @@ const Body = () => {
         );
         const json = await data.json();
         let resInfo = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        // console.log(json);
-        // console.log(resInfo);
-        // console.log(resInfo);
         setListOfRestaurent(resInfo);
         setfilteredRestaurent(resInfo);
     }
@@ -55,8 +42,6 @@ const Body = () => {
                     <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
                         const filteredRes = listOfRestaurent.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
                         setfilteredRestaurent(filteredRes);
-                        console.log("Filtered : ",filteredRestaurent);
-                        // console.log(filteredRes);
                     }}>Search</button>
                 </div>
                 <div className="search m-4 p-4 flex items-center">
@@ -65,7 +50,6 @@ const Body = () => {
                             return res?.info?.avgRating >= 4.5;
                         });
                         setfilteredRestaurent(rest);
-                        // console.log(rest);
                     }}>Top Rated Restaurent</button>
                 </div>
 
@@ -73,7 +57,7 @@ const Body = () => {
             <div className="flex flex-wrap">
                 {
                     filteredRestaurent.map((restaurent) => <Link to={"/restaurant/" + restaurent?.info?.id} key={restaurent?.info?.id}>{(restaurent?.info?.avgRating
->=4.5)?<RestaurentCardPromoted resData={restaurent} />:<RestaurentCard resData={restaurent} />}</Link>)
+                        >= 4.5) ? <RestaurentCardPromoted resData={restaurent} /> : <RestaurentCard resData={restaurent} />}</Link>)
                 }
             </div>
         </div>

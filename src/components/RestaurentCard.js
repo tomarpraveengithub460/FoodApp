@@ -1,9 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 const RestaurentCard = (props) => {
-    console.log("This is the LOC : ",props);
     const { resData } = props;
-    console.log("This is the ResData : ",resData);
-    // console.log("Inside res card and ",resData.info);
     const {
         name,
         cloudinaryImageId,
@@ -11,7 +8,7 @@ const RestaurentCard = (props) => {
         avgRating,
         costForTwo,
         sla,
-    } = resData?.info;   //Optional Chaining
+    } = resData?.info;  
 
     return (
         <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-400">
@@ -28,7 +25,6 @@ const RestaurentCard = (props) => {
 
 export const withPromotedLabel=(RestaurentCard)=>{
     return (props)=>{
-        const {resData}=props;
         return (
             <div>
                 <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
