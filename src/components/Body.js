@@ -1,10 +1,11 @@
 import RestaurentCard, { withPromotedLabel } from "./RestaurentCard";
 import resList from "../../data";
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const [listOfRestaurent, setListOfRestaurent] = useState([]);
@@ -14,12 +15,8 @@ const Body = () => {
     const { resId } = useParams();
 
 
-    const [data,setData]=useState();
-    function handleSearch(){
-        
-    }
-
-
+    const {loggedInUser , setUserName}=useContext(UserContext);
+    console.log("Logged value is : ",loggedInUser);
 
     useEffect(() => {
         fetchData();
@@ -43,7 +40,7 @@ const Body = () => {
         );
 
 
-    return listOfRestaurent.length == 0 ? <Shimmer /> : (
+    return listOfRestaurent.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="filter flex items-center">
                 <div className="search m-4 p-4">
@@ -64,11 +61,7 @@ const Body = () => {
 
                 <div className="filter flex items-center">
                 <div className="search m-4 p-4">
-                    <input type="text" className=" w-72 h-12 p-2 border border-solid border-black rounded-xl" value={searchText} onChange={(event) => { setSearchText(event.target.value); }} />
-                    <button className="px-4 py-2 w-40 h-12 bg-green-600 hover:bg-green-800 text-white m-4 rounded-lg" onClick={() => {
-                        const filteredRes = listOfRestaurent.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
-                        setfilteredRestaurent(filteredRes);
-                    }}>Search</button>
+                    <input type="text" className=" w-72 h-12 p-2 border border-solid border-black rounded-xl" onChange={(event=>{setUserName(event.target.value)})} />
                 </div>
                 </div>
 
