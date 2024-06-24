@@ -12,6 +12,15 @@ const Body = () => {
     const [filteredRestaurent, setfilteredRestaurent] = useState([]);
     const RestaurentCardPromoted = withPromotedLabel(RestaurentCard);
     const { resId } = useParams();
+
+
+    const [data,setData]=useState();
+    function handleSearch(){
+        
+    }
+
+
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -52,6 +61,18 @@ const Body = () => {
                         setfilteredRestaurent(rest);
                     }}>Top Rated Restaurent</button>
                 </div>
+
+                <div className="filter flex items-center">
+                <div className="search m-4 p-4">
+                    <input type="text" className=" w-72 h-12 p-2 border border-solid border-black rounded-xl" value={searchText} onChange={(event) => { setSearchText(event.target.value); }} />
+                    <button className="px-4 py-2 w-40 h-12 bg-green-600 hover:bg-green-800 text-white m-4 rounded-lg" onClick={() => {
+                        const filteredRes = listOfRestaurent.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
+                        setfilteredRestaurent(filteredRes);
+                    }}>Search</button>
+                </div>
+                </div>
+
+
             </div>
             <div className="flex flex-wrap">
                 {
