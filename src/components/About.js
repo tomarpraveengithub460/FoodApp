@@ -19,7 +19,8 @@
 //Now we are converting the functional Component into the Class Component
 import User from "./User";
 import UserClass from "./UserClass";
-import { Component } from "react";   
+import { Component } from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
     constructor(props) {
@@ -42,8 +43,14 @@ class About extends Component {
             <div>
                 <h1>About us</h1>
                 <h2>This is the food ordering App</h2>
+                <div>
+                    Logged In User
+                    <UserContext.Consumer>
+                        {({loggedInUser}) => <h1 className="text-xl font-bold">{loggedInUser}</h1>}
+                    </UserContext.Consumer>
+                </div>
                 {/* <User name="Akshay Saini" price={200} /> */}
-                <UserClass name="Akshay Saini" price={200} />
+                {/* <UserClass name="Akshay Saini" price={200} /> */}
                 {/* <UserClass name="Karan" price={100} /> */}
             </div>
         )
