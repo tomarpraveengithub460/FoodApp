@@ -36,10 +36,10 @@ const Body = () => {
 
     return listOfRestaurent.length == 0 ? <Shimmer /> : (
         <div className="body">
-            <div className="filter flex">
+            <div className="filter flex items-center">
                 <div className="search m-4 p-4">
-                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(event) => { setSearchText(event.target.value); }} />
-                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
+                    <input type="text" className=" w-72 h-12 p-2 border border-solid border-black rounded-xl" value={searchText} onChange={(event) => { setSearchText(event.target.value); }} />
+                    <button className="px-4 py-2 w-40 h-12 bg-green-600 hover:bg-green-800 text-white m-4 rounded-lg" onClick={() => {
                         const filteredRes = listOfRestaurent.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
                         setfilteredRestaurent(filteredRes);
                     }}>Search</button>
@@ -52,7 +52,6 @@ const Body = () => {
                         setfilteredRestaurent(rest);
                     }}>Top Rated Restaurent</button>
                 </div>
-
             </div>
             <div className="flex flex-wrap">
                 {

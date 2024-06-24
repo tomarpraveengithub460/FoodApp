@@ -6,21 +6,21 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
 
     const [btnNameReact, setBtnNameReact] = useState("Login");
-    const onlineStatus=useOnlineStatus();
+    const onlineStatus = useOnlineStatus();
 
     return (
-        <div className="flex justify-between shadow-xl bg-white rounded-b-xl sticky top-0">
+        <div className="flex justify-between shadow-xl bg-white rounded-b-xl sticky top-0 z-50">
             <div className="logo-container>">
                 <img className="w-40 h-30 rounded-full bg-cover" src={LOGO_URL} />
             </div>
             <div className="flex items-center">
                 <ul className="flex p-4 m-4">
                     <li className="px-4">
-                        Online Status : {onlineStatus?"🟢":"🔴"}
+                        Online Status : {onlineStatus ? "🟢" : "🔴"}
                     </li>
-                    
+
                     <li className="px-4">
-                        <Link to="/">Home</Link>
+                        <Link to="/">🏠 Home</Link>
                     </li>
                     <li className="px-4">
                         <Link to="/about">About Us</Link>
