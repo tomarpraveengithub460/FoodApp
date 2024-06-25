@@ -40,7 +40,7 @@ class About extends Component {
     render() {
         // console.log("Parent Render");
         return (
-            <div>
+            <div className="w-auto h-auto p-10 text-center bg-gray-100 ml-20 mr-20 mt-10 mb-10 rounded-xl">
                 <h1>About us</h1>
                 <h2>This is the food ordering App</h2>
                 <div>

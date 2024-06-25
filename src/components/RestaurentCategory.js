@@ -9,7 +9,7 @@ const RestaurentCategory = ({ categoryData,showItems,setShowCategory }) => {
     return (
         <div>
             <div className="flex justify-center">
-                <div className="w-9/12 border-2 p-4 rounded-2xl m-2">
+                <div className="w-10/12 border-2 p-4 mr-20 ml-20 rounded-2xl m-2">
                     <div className="flex justify-between hover:cursor-pointer" onClick={handleClick}>
                         <h1 className="text-xl font-bold">{categoryData?.card?.card?.title} ({categoryData?.card?.card?.itemCards.length})</h1>
                         <h1 style={{cursor:"pointer"}}>⬇️</h1>

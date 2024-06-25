@@ -1,9 +1,9 @@
-import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurentMenu from "../utils/useRestaurentMenu";
 import { CDN_URL } from "../utils/constants";
 import RestaurentCategory from "./RestaurentCategory";
 import { useState } from "react";
+import MenuShimmer from "./MenuShimmer";
 
 const RestaurentMenu = () => {
     const { resId } = useParams();
@@ -13,7 +13,7 @@ const RestaurentMenu = () => {
 
     const [showCategory, setShowCategory] = useState(null);
 
-    if (resInfo == null) return (<Shimmer />);
+    if (resInfo == null) return (<MenuShimmer />);
 
     const { name,
         cloudinaryImageId
@@ -23,7 +23,7 @@ const RestaurentMenu = () => {
     return (
         <div>
             <div className="flex items-center justify-center">
-                <div className="flex justify-between self-center w-9/12 h-60 border-2 p-4 rounded-3xl m-6 align-middle">
+                <div className="flex justify-between self-center w-10/12 h-60 border-2 p-4 rounded-3xl mr-20 ml-20 m-8 align-middle ">
                     <div className="flex flex-col items-start space-y-2">
                         <h1 className="text-2xl font-bold pb-4">{name}</h1>
                         <h2 className="font-bold">⭐️ {avgRating}  ({totalRatingsString}) • {costForTwoMessage}</h2>
