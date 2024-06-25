@@ -5,8 +5,8 @@ import { addItem } from "../utils/cartSlice";
 
 
 const ItemList = ({ data }) => {
-    let array = data;
-    console.log(array);
+    // let array = data;
+    // console.log(array);
 
 
     const dispatch=useDispatch();
@@ -17,7 +17,7 @@ const ItemList = ({ data }) => {
 
     return (
         <div >
-            {array.map((element) => (
+            {data.map((element) => (
                 <div className="flex justify-between relative border-b-2 p-4 w-12/12 rounded-2xl" key={element?.card?.info?.id}>
                     <div>
                         {element?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? "🟩" : "🟥"}
