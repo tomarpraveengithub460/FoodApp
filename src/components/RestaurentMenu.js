@@ -28,7 +28,7 @@ const RestaurentMenu = () => {
                         <h1 className="text-2xl font-bold pb-4">{name}</h1>
                         <h2 className="font-bold">⭐️ {avgRating}  ({totalRatingsString}) • {costForTwoMessage}</h2>
                         <h2 className="font-bold text-orange-500">🍴 {cuisines.join(", ")}</h2>
-                        <h3 className="font-bold">🚚 {feeDetails.message.slice(feeDetails.message.indexOf("|") + 2, feeDetails.message.length + 2)}</h3>
+                        <h3 className="font-bold">🚚 {feeDetails?.message?.slice(feeDetails?.message.indexOf("|") + 2, feeDetails?.message?.length + 2)}</h3>
                         <button className="h-12 w-28 bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 my-2 rounded font-bold">Order</button>
                     </div>
                     <img src={CDN_URL + cloudinaryImageId} className="w-60 rounded-2xl aspect-square"></img>

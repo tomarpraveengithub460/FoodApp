@@ -3,7 +3,7 @@ import RestaurentCard, { withPromotedLabel } from "./RestaurentCard";
 import { useEffect, useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import Footer from "./Footer";
