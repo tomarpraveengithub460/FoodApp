@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/tomarpraveengithub460/FoodApp#readme",
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
     "@testing-library/react": "^16.0.0",
+    "babel-jest": "^29.7.0",
     "buffer": "^6.0.3",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
