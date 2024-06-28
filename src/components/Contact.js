@@ -8,15 +8,15 @@ const Contact = () => {
             <h1>Contact us Page</h1>
             <p>This is the contact us page</p>
             <div className="filter flex justify-center">
-                <div>
-                    <form>
-                        <input type="text" className="border border-black p-2 m-2" placeholder="name"></input>
-                        <input type="text" className="" placeholder="Message"></input>
-                        <button>Submit</button>
-                    </form>
-                </div>
-                <div className="search m-4 p-4">
-                    <label>Chnage User : </label>
+            <div className="search m-4 p-4">
+                <h1>Give Your Feedback : </h1>
+                <form>
+                    <input type="text" className="border border-black p-2 m-2" placeholder="name"></input>
+                    <input type="text" className="border border-black p-2 m-2" placeholder="Message"></input>
+                    <button className="border border-black p-2 m-2">Submit</button>
+                </form>
+                    <br></br>
+                    <label>Change User : </label>
                     <input type="text" className=" w-72 h-12 p-2 border border-solid border-black rounded-xl" onChange={(event => { setUserName(event.target.value) })} />
                 </div>
             </div>
