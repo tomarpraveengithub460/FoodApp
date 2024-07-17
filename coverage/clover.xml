@@ -1,14 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1719579881188" clover="3.2.0">
-  <project timestamp="1719579881188" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="sum.js" path="/Users/praveentomar/Desktop/FoodApp/src/components/sum.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-    </file>
-<coverage generated="1719578939617" clover="3.2.0">
-  <project timestamp="1719578939617" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1721236940890" clover="3.2.0">
+  <project timestamp="1721236940890" name="All files">
+    <metrics statements="99" coveredstatements="79" conditionals="22" coveredconditionals="8" methods="41" coveredmethods="26" elements="162" coveredelements="113" complexity="0" loc="99" ncloc="99" packages="2" files="17" classes="17"/>
+    <package name="components">
+      <metrics statements="72" coveredstatements="57" conditionals="22" coveredconditionals="8" methods="31" coveredmethods="21"/>
+      <file name="Body.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/Body.js">
+        <metrics statements="25" coveredstatements="24" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="9"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="38" count="7" type="stmt"/>
+        <line num="39" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="48" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="55" count="20" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="20" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="76" count="69" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="Contact.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/Contact.js">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+      <file name="Footer.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/Footer.js">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+      </file>
+      <file name="Header.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/Header.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="41" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="ItemList.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/ItemList.js">
+        <metrics statements="7" coveredstatements="1" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+      </file>
+      <file name="MenuShimmer.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/MenuShimmer.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="RestaurentCard.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/RestaurentCard.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="70" type="stmt"/>
+        <line num="11" count="70" type="stmt"/>
+        <line num="13" count="70" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="32" type="stmt"/>
+      </file>
+      <file name="RestaurentCategory.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/RestaurentCategory.js">
+        <metrics statements="5" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="RestaurentMenu.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/RestaurentMenu.js">
+        <metrics statements="9" coveredstatements="6" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="Shimmer.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/Shimmer.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+      </file>
+      <file name="sum.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/components/sum.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="27" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="5"/>
+      <file name="UserContext.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/utils/UserContext.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+      <file name="appStore.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/utils/appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+      <file name="cartSlice.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/utils/cartSlice.js">
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+      <file name="constants.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/utils/constants.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+      </file>
+      <file name="useOnlineStatus.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/utils/useOnlineStatus.js">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+      </file>
+      <file name="useRestaurentMenu.js" path="/Users/praveentomar/Desktop/Full Stack/React Projects Namaste React/FoodApp/src/utils/useRestaurentMenu.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
+    "@testing-library/dom": "^10.3.2",
     "@testing-library/react": "^16.0.0",
     "babel-jest": "^29.7.0",
     "buffer": "^6.0.3",
@@ -29,7 +31,9 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.24.7",
     "@reduxjs/toolkit": "^2.2.5",
+    "@testing-library/jest-dom": "^6.4.6",
     "postcss": "^8.4.38",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

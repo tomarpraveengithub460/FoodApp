@@ -9,8 +9,8 @@ const ItemList = ({ data }) => {
     // console.log(array);
 
 
-    const dispatch=useDispatch();
-    const handleAddItems=(element)=>{
+    const dispatch = useDispatch();
+    const handleAddItems = (element) => {
         //Dispatch an action
         dispatch(addItem(element));  //Item passed inside the addItem is passed to the action.payload
     }
@@ -19,7 +19,7 @@ const ItemList = ({ data }) => {
         <div >
             {data.map((element) => (
                 <div className="flex justify-between relative border-b-2 p-4 w-12/12 rounded-2xl" key={element?.card?.info?.id}>
-                    <div>
+                    <div data-testid="foodItems">
                         {element?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? "🟩" : "🟥"}
                         <h1 className="font-bold">{element?.card?.info?.name}</h1>
                         {element?.card?.info?.ratings?.aggregatedRating?.rating ? <h2>⭐️ {element?.card?.info?.ratings?.aggregatedRating?.rating} ({element?.card?.info?.ratings?.aggregatedRating?.ratingCount})</h2> : <h2>🔺 No Ratings</h2>}
@@ -31,7 +31,7 @@ const ItemList = ({ data }) => {
 
                     <img src={CDN_URL + element?.card?.info?.imageId} className="w-2/12 rounded-2xl"></img>
                     <button className="absolute right-9 bottom-0 bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 my-2 rounded"
-                    onClick={()=>handleAddItems(element)}
+                        onClick={() => handleAddItems(element)}
                     >Add to Cart</button>
                 </div>
             ))}

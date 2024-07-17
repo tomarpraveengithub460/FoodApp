@@ -3,14 +3,14 @@ import { useEffect} from "react";
 const User = () => {
     useEffect(()=>{
         const interval=setInterval(()=>{
-            console.log("Hello World");
+            // console.log("Hello World");
         },1000);
-        console.log("Use Effect");
+        // console.log("Use Effect");
 
         //This is how we clear the interval.
         return ()=>{
             clearInterval(interval);
-            console.log("Use Effect Return");
+            // console.log("Use Effect Return");
         };
     },[]);
 

@@ -11,11 +11,11 @@ const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Login");
 
     const data = useContext(UserContext);
-    console.log(data);
+    // console.log(data);
     
     //Subscribibg to the store using the selector
     const cartItems=useSelector((store)=>store.cart.items);
-    console.log(cartItems);
+    // console.log(cartItems);
 
     return (
         <div className="flex justify-between shadow-xl bg-white rounded-b-xl sticky top-0 z-50 pl-20 pr-20">
@@ -36,7 +36,7 @@ const Header = () => {
                     <li className="px-4 font-bold">
                         <Link to="/grocery">Grocery</Link>
                     </li>
-                   <Link to="/cart"> <li className="px-4 font-bold text-xl">🛒 <span className="text-xs">({cartItems.length})</span></li></Link>
+                    <li className="px-4 font-bold text-xl"><Link to="/cart">🛒({cartItems.length})</Link></li>
 
                     <button className="login font-bold" onClick={() => { btnNameReact == "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login") }}>{btnNameReact}</button>
                     &nbsp; &nbsp; &nbsp;  &nbsp; 

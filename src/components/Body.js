@@ -17,7 +17,7 @@ const Body = () => {
 
 
     const {loggedInUser , setUserName}=useContext(UserContext);
-    console.log("Logged value is : ",loggedInUser);
+    // console.log("Logged value is : ",loggedInUser);
 
     useEffect(() => {
         fetchData();
@@ -30,6 +30,7 @@ const Body = () => {
         );
         const json = await data.json();
         let resInfo = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        // console.log(resInfo);
         setListOfRestaurent(resInfo);
         setfilteredRestaurent(resInfo);
     }
@@ -49,7 +50,7 @@ const Body = () => {
          <div className="body">
             <div className="filter flex justify-between">
                 <div className="search m-4 pl-2">
-                    <input type="text" className="ml-20 w-72 h-12 p-2 border border-solid border-black rounded-xl" value={searchText} onChange={(event) => { setSearchText(event.target.value); }} />
+                    <input type="text" data-testid="searchInput" className="ml-20 w-72 h-12 p-2 border border-solid border-black rounded-xl" value={searchText} onChange={(event) => { setSearchText(event.target.value); }} />
                     <button className="px-4 py-2 w-40 h-12 bg-green-600 hover:bg-green-800 text-white m-4 rounded-lg" onClick={() => {
                         const filteredRes = listOfRestaurent.filter((res) => res?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
                         setfilteredRestaurent(filteredRes);
